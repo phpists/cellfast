@@ -8,6 +8,22 @@ use yii\helpers\Url;
 $cart = Yii::$container->get(\common\models\Cart::className());
 
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* CSS стилі для вирівнювання іконки лупи всередені поля для ввода */
+    .input-group .input-group-prepend a {
+        position: relative;
+        left: -30px; /* Відстань, на яке переносим іконку вліво */
+        top: 2px; /* Вирівнюється вертикальне положення іконки */
+        z-index: 1;
+        color: #495057; /* Колір іконки */
+        text-decoration: none;
+    }
+
+    .input-group input {
+        padding-right: 30px;
+    }
+</style>
 <header class="header">
     <div class="header__top">
         <div class="container">
@@ -15,6 +31,17 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                 <div class="header__lang"><?= \common\widgets\LanguageSwitcher::widget()?></div>
 
                 <div class="header__auth">
+                    <div class="search">
+                        <form action="<?= Url::to(['site/search'])?>" method="get" class="form-inline">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
+                                    <a><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                     <div class="header__link">
                         <a href="http://fb.me/cellfast.ukraine" target="_blank">
                             <div class="header__link__icon">

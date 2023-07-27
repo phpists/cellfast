@@ -1,6 +1,7 @@
 <?php
 namespace cellfast\controllers;
 
+use backend\models\Product;
 use common\models\Document;
 use common\models\Event;
 use common\models\LocationRegion;
@@ -104,4 +105,12 @@ class SiteController extends \common\controllers\SiteController
 
 		return $this->render("download/{$type}", ['dataProvider' => $dataProvider]);
 	}
+
+    public function actionSearch()
+    {
+        $searchRequest = Yii::$app->request->get('search_header');
+        $search = str_replace(' ', '', $searchRequest);
+        $query = Product::find()->where(['LIKE', 'replace(native_ )']);
+    }
+
 }
