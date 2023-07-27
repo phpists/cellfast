@@ -1,0 +1,32 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:e1c="http://v8.1c.ru/8.1/data/core"
+           attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:import namespace="http://v8.1c.ru/8.1/data/core"/>
+    <xs:complexType name="RequestSaveDataWarehouses">
+        <xs:sequence>
+            <xs:element name="row" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="guid" type="e1c:UUID"/>
+                        <xs:element name="name">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="150"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="address">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="250"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="mark_deleted" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

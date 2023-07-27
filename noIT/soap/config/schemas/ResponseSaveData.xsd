@@ -1,0 +1,18 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:tns="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:complexType name="ResponseSaveData">
+        <xs:sequence>
+            <xs:element name="code" type="xs:unsignedShort"/>
+            <xs:element name="date" type="xs:dateTime"/>
+            <xs:element name="description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,54 @@
+.popover {
+  display: none;
+
+  .arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 1px;
+  }
+
+}
+
+.popover-x.right {
+  margin-left: 12px;
+}
+
+.popover-header.popover-title {
+
+  font-family: Poppins, sans-serif !important;
+  font-size: 12px !important;
+  padding: .5rem 1.9rem .5rem 1.1rem !important;
+
+  button {
+    position: absolute;
+    right: 8px;
+  }
+
+}
+
+.popover-x.right > .arrow {
+  left: -12px;
+  margin-top: -11px;
+}
+
+.alert {
+  margin: 10px 30px 0;
+  font-size: 14px;
+  font-weight: 600;
+
+  .close {
+    color: #fff !important;
+    padding-top: 3px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .alert {
+    margin: 10px 20px 0;
+  }
+
+}

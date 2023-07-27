@@ -1,0 +1,71 @@
+.modal {
+  background: rgba(0,0,0,0.3);
+
+  .modal-content {
+    display: block;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:before, &:after {
+        display: none;
+      }
+
+      .close {
+        margin: 0;
+        order: 2;
+      }
+
+      span.h3 {
+        margin: 0;
+        order: 1;
+      }
+
+    }
+
+  }
+
+}
+
+.popover {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.0rem;
+
+  .popover-content img {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+.modal-open {
+  overflow: hidden !important;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0,32%);
+  transform: translate(0,32%);
+}
+
+.modal-backdrop.fade {
+  opacity: 0.3 !important;
+}
+
+.fade {
+
+  &.in, &.show {
+    opacity: 1;
+  }
+
+}
+
+.bootstrap-dialog.type-warning .modal-header {
+  background-color: #5867dd;
+}
+
+.bootstrap-dialog .bootstrap-dialog-title {
+  color: #fff;
+}
+

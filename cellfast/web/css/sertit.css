@@ -1,0 +1,138 @@
+.sertop {
+  background: #f4f4f4;
+  padding-top: 25px;
+  padding-bottom: 70px;
+}
+@media (max-width: 991px) {
+  .sertop {
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 767px) {
+  .sertop {
+    padding-bottom: 40px;
+  }
+}
+.sertop__cnt {
+  margin-top: 35px;
+  background: #fff;
+  padding: 60px;
+  padding-right: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@media (max-width: 1199px) {
+  .sertop__cnt {
+    padding: 35px;
+  }
+}
+@media (max-width: 991px) {
+  .sertop__cnt {
+    padding: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .sertop__cnt {
+    margin-top: 25px;
+    padding: 15px;
+    padding-right: 15px;
+    display: block;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+.sertop__cnt__txt {
+  flex: 1;
+}
+.sertop__cnt__txt__title {
+  font-size: 36px;
+  color: #111;
+  line-height: 40px;
+}
+@media (max-width: 991px) {
+  .sertop__cnt__txt__title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .sertop__cnt__txt__title {
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+  }
+}
+.sertop__cnt__txt__txt {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #111;
+}
+@media (max-width: 991px) {
+  .sertop__cnt__txt__txt {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+.sertop__cnt__img {
+  width: 285px;
+  margin-left: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.12);
+  position: relative;
+  transition: box-shadow 0.5s ease;
+  display: block;
+}
+@media (max-width: 1199px) {
+  .sertop__cnt__img {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .sertop__cnt__img {
+    width: 200px;
+  }
+}
+@media (max-width: 767px) {
+  .sertop__cnt__img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+}
+.sertop__cnt__img:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.sertop__cnt__img:hover .sertop__cnt__img__icon {
+  background: #008ea6;
+}
+.sertop__cnt__img img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+.sertop__cnt__img__icon {
+  position: absolute;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  background: #07b0c8;
+  transition: background 0.5s ease;
+}
+.sertop__cnt__img__icon .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  font-size: 26px;
+  color: #fff;
+}
+/*# sourceMappingURL=sertit.css.map */

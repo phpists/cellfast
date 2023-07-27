@@ -1,0 +1,49 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:e1c="http://v8.1c.ru/8.1/data/core"
+           attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:import namespace="http://v8.1c.ru/8.1/data/core"/>
+    <xs:complexType name="RequestSaveDataAvailabilityOfGoods">
+        <xs:sequence>
+            <xs:element name="row" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="good" type="e1c:UUID"/>
+                        <xs:element name="angle">
+                            <xs:simpleType>
+                                <xs:union>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                            <xs:minInclusive value="0"/>
+                                            <xs:maxInclusive value="89"/>
+                                            <xs:fractionDigits value="0"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                            <xs:minInclusive value="91"/>
+                                            <xs:maxInclusive value="179"/>
+                                            <xs:fractionDigits value="0"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:union>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="warehouse" type="e1c:UUID"/>
+                        <xs:element name="status">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="in stock"/>
+                                    <xs:enumeration value="ends"/>
+                                    <xs:enumeration value="unavailable"/>
+                                    <xs:enumeration value="coming"/>
+                                    <xs:enumeration value="pre-order"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,19 @@
+﻿<xs:schema targetNamespace="http://v8.1c.ru/8.1/data/core"
+           xmlns:tns="http://v8.1c.ru/8.1/data/core"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:annotation xml:lang="ru">
+		<xs:appinfo>SOAP WebService https://cellfast.ua/webapi/</xs:appinfo>
+		<xs:documentation>
+			В этой схеме описаны типы данных из пространства имен http://v8.1c.ru/8.1/data/core, которые
+            используются в данном приложении. Полное описание в файле 'Core1cFull.xsd'
+			Данную схему не нужно импортировать в приложение 1С:Предприятие 8, так как она является неотъемлемой
+            частью указанной платформы.
+		</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="UUID">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

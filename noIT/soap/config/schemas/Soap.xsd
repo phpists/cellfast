@@ -1,0 +1,25 @@
+<xs:schema targetNamespace="http://schemas.xmlsoap.org/soap/envelope/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns1="http://cellfast.ua/webapi"
+           attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:import namespace="http://cellfast.ua/webapi" schemaLocation="CellfastMessages.xsd"/>
+    <xs:element name="Envelope">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" minOccurs="0" type="xs:anyType"/>
+                <xs:element name="Body">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element ref="ns1:startSync"/>
+                            <xs:element ref="ns1:startSyncResponse"/>
+                            <xs:element ref="ns1:saveData"/>
+                            <xs:element ref="ns1:saveDataResponse"/>
+                            <xs:element ref="ns1:getData"/>
+                            <xs:element ref="ns1:getDataResponse"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

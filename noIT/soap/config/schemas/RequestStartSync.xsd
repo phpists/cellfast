@@ -1,0 +1,36 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:tns="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:complexType name="RequestStartSync">
+        <xs:sequence>
+            <xs:element name="header">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="date" type="xs:dateTime"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="bundle">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="row" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="entity">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="25"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="size" type="xs:unsignedInt"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

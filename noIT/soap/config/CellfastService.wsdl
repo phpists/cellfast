@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CellfastWebService"
+                  targetNamespace="http://cellfast.ua/webapi"
+                  xmlns:tns="http://cellfast.ua/webapi"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:documentation>
+        Этот документ описывает веб-сервис, предназначенный для обмена информацией между веб-приложением и 1С
+        Использованные версии стандартов WSDL 1.1 (WSDL 2.0 не поддерживается php-soap) и SOAP 1.1 (php-soap
+        по-умолчанию использует эту версию, кроме того SOAP 1.2 использует лишние обертки, которые в данной
+        реализации не будут использоваться).
+        Согласовано с требованиями WS-I Basic Profile 1.1 (http://www.ws-i.org/Profiles/BasicProfile-1.1.html)
+        Описание состоит из таких файлов:
+        CellfastService.wsdl - описание сервиса и операций, сообщений операций, связывание сервиса с операциями
+        schemas/СellfastMessages.xsd - описание структуры данных сообщений
+        schemas/*.xsd - описание дополнительных типов данных сообщений
+    </wsdl:documentation>
+    <wsdl:import namespace="http://v8.1c.ru/8.1/data/core" location="schemas/Core1c.xsd"/>
+    <wsdl:import namespace="http://cellfast.ua/webapi" location="schemas/CellfastMessages.xsd"/>
+    <wsdl:message name="StartSyncRequestMessage">
+        <wsdl:part name="parameters" element="tns:startSync"/>
+    </wsdl:message>
+    <wsdl:message name="StartSyncResponseMessage">
+        <wsdl:part name="parameters" element="tns:startSyncResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SaveDataRequestMessage">
+        <wsdl:part name="parameters" element="tns:saveData"/>
+    </wsdl:message>
+    <wsdl:message name="SaveDataResponseMessage">
+        <wsdl:part name="parameters" element="tns:saveDataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetDataRequestMessage">
+        <wsdl:part name="parameters" element="tns:getData"/>
+    </wsdl:message>
+    <wsdl:message name="GetDataResponseMessage">
+        <wsdl:part name="parameters" element="tns:getDataResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CellfastWSPortType">
+        <wsdl:operation name="startSync">
+            <wsdl:input message="tns:StartSyncRequestMessage"/>
+            <wsdl:output message="tns:StartSyncResponseMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="saveData">
+            <wsdl:input message="tns:SaveDataRequestMessage"/>
+            <wsdl:output message="tns:SaveDataResponseMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="getData">
+            <wsdl:input message="tns:GetDataRequestMessage"/>
+            <wsdl:output message="tns:GetDataResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CellfastWSSoapBinding" type="tns:CellfastWSPortType">
+        <soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="startSync">
+            <soapbind:operation  style="document" soapAction="#startSync"/>
+            <wsdl:input>
+                <soapbind:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soapbind:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="saveData">
+            <soapbind:operation  style="document" soapAction="#saveData"/>
+            <wsdl:input>
+                <soapbind:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soapbind:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getData">
+            <soapbind:operation  style="document" soapAction="#getData"/>
+            <wsdl:input>
+                <soapbind:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soapbind:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CellfastWebService">
+        <wsdl:port name="CellfastWSPort" binding="tns:CellfastWSSoapBinding">
+            <soapbind:address location="http://cellfast.ua/webapi"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

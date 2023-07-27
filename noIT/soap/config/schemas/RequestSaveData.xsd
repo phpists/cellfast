@@ -1,0 +1,41 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:tns="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:include schemaLocation="RequestSaveDataGroupsOfGoods.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataCodesUCGFEA.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataGoods.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataWarehouses.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataAvailabilityOfGoods.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataTypesOfPrices.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataPrices.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataClients.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataAgreements.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataRequisitesOfAgreements.xsd"/>
+    <xs:include schemaLocation="RequestSaveDataReceivables.xsd"/>
+    <xs:complexType name="RequestSaveData">
+        <xs:sequence>
+            <xs:element name="header">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="date" type="xs:dateTime"/>
+                        <xs:element name="full_dump" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:choice>
+                <xs:element name="groupsOfGoods" type="tns:RequestSaveDataGroupsOfGoods"/>
+                <xs:element name="codesUCGFEA" type="tns:RequestSaveDataCodesUCGFEA"/>
+                <xs:element name="goods" type="tns:RequestSaveDataGoods"/>
+                <xs:element name="warehouses" type="tns:RequestSaveDataWarehouses"/>
+                <xs:element name="availabilityOfGoods" type="tns:RequestSaveDataAvailabilityOfGoods"/>
+                <xs:element name="typesOfPrices" type="tns:RequestSaveDataTypesOfPrices"/>
+                <xs:element name="prices" type="tns:RequestSaveDataPrices"/>
+                <xs:element name="clients" type="tns:RequestSaveDataClients"/>
+                <xs:element name="agreements" type="tns:RequestSaveDataAgreements"/>
+                <xs:element name="requisitesOfAgreements" type="tns:RequestSaveDataRequisitesOfAgreements"/>
+                <xs:element name="receivables" type="tns:RequestSaveDataReceivables"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

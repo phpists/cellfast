@@ -1,0 +1,58 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:tns="http://cellfast.ua/webapi"
+           xmlns:e1c="http://v8.1c.ru/8.1/data/core"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <!-- Block importing and including other schemas !-->
+    <xs:import namespace="http://v8.1c.ru/8.1/data/core" schemaLocation="Core1c.xsd">
+        <xs:annotation xml:lang="ru">
+            <xs:documentation>
+                Это пространство имен является частью платформы 1С:Предприятие 8.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:import>
+    <xs:include schemaLocation="RequestStartSync.xsd"/>
+    <xs:include schemaLocation="ResponseStartSync.xsd"/>
+    <xs:include schemaLocation="RequestSaveData.xsd"/>
+    <xs:include schemaLocation="ResponseSaveData.xsd"/>
+    <xs:include schemaLocation="RequestGetData.xsd"/>
+    <xs:include schemaLocation="ResponseGetData.xsd"/>
+    <!-- Block declaring root elements !-->
+    <xs:element name="startSync" type="tns:StartSyncRequest"/>
+    <xs:element name="startSyncResponse" type="tns:StartSyncResponse"/>
+    <xs:element name="saveData" type="tns:SaveDataRequest"/>
+    <xs:element name="saveDataResponse" type="tns:SaveDataResponse"/>
+    <xs:element name="getData" type="tns:GetDataRequest"/>
+    <xs:element name="getDataResponse" type="tns:GetDataResponse"/>
+    <!-- Block declaring root types !-->
+    <xs:complexType name="StartSyncRequest">
+        <xs:sequence>
+            <xs:element name="request" type="tns:RequestStartSync"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StartSyncResponse">
+        <xs:sequence>
+            <xs:element name="response" type="tns:ResponseStartSync"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SaveDataRequest">
+        <xs:sequence>
+            <xs:element name="request" type="tns:RequestSaveData"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="SaveDataResponse">
+        <xs:sequence>
+            <xs:element name="response" type="tns:ResponseSaveData"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetDataRequest">
+        <xs:sequence>
+            <xs:element name="request" type="tns:RequestGetData"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetDataResponse">
+        <xs:sequence>
+            <xs:element name="response" type="tns:ResponseGetData"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

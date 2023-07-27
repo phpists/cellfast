@@ -1,0 +1,52 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:e1c="http://v8.1c.ru/8.1/data/core"
+           attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:import namespace="http://v8.1c.ru/8.1/data/core"/>
+    <xs:complexType name="RequestSaveDataReceivables">
+        <xs:sequence>
+            <xs:element name="row" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="client" type="e1c:UUID"/>
+                        <xs:element name="agreement" type="e1c:UUID"/>
+                        <xs:element name="order_head" type="e1c:UUID"/>
+                        <xs:element name="order_view">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="100"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="shipping_date" type="xs:date"/>
+                        <xs:element name="invoice_view">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="100"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="deadline_for_payment" type="xs:date"/>
+                        <xs:element name="sum_of_invoice">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:minInclusive value="0"/>
+                                    <xs:totalDigits value="15"/>
+                                    <xs:fractionDigits value="2"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="sum_of_debt">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:decimal">
+                                    <xs:totalDigits value="15"/>
+                                    <xs:fractionDigits value="2"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

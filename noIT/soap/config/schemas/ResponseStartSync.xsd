@@ -1,0 +1,21 @@
+<xs:schema targetNamespace="http://cellfast.ua/webapi"
+           xmlns:tns="http://cellfast.ua/webapi"
+           xmlns:e1c="http://v8.1c.ru/8.1/data/core"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://v8.1c.ru/8.1/data/core"/>
+    <xs:complexType name="ResponseStartSync">
+        <xs:sequence>
+            <xs:element name="code" type="xs:unsignedShort"/>
+            <xs:element name="date" type="xs:dateTime"/>
+            <xs:element name="description">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="50"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="guid" type="e1c:UUID"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
