@@ -12,6 +12,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
 use yii\debug\models\timeline\DataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -110,7 +111,17 @@ class SiteController extends \common\controllers\SiteController
     {
         $searchRequest = Yii::$app->request->get('search_header');
         $search = str_replace(' ', '', $searchRequest);
-        $query = Product::find()->where(['LIKE', 'replace(native_ )']);
+        $query = Product::find()->where(['LIKE', 'replace(native_name, " ", "")', $search]);
+        $this->setMeta('Пошук', 'product');
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => ['pageSize' => 3],
+        ]);
+
+        $jsonData = Json::encode($dataProvider);
+        Yii::info('jsonData: ' . print_r($jsonData, true));
+
+        return $this->render('_header', ['jsonData' => $jsonData]);
     }
 
 }
