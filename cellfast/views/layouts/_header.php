@@ -63,10 +63,11 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                 <div class="header__lang"><?= \common\widgets\LanguageSwitcher::widget()?></div>
 
                 <div class="header__auth">
+
                     <div class="search">
                         <form class="d-flex search_form" action="<?= Url::to(['/search'])?>" method="get">
                             <div class="search_wrapper">
-                                <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
+                                <input required type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
                             </div>
                             <button class="btn d-block search_btn"><i class="fas fa-search"></i></button>
                         </form>

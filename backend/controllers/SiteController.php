@@ -1,7 +1,10 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\Product;
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -98,5 +101,7 @@ class SiteController extends Controller
 
 		return $this->goHome();
 	}
+
+
 
 }

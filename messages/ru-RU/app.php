@@ -200,4 +200,5 @@ return [
     'Calculation of a gutter for a roof of type F' => 'Расчет водостока вальмовой крыши',
     'Contact details' => 'Контактные данные',
     '' => '',
+    'Search' => 'Поиск'
 ];

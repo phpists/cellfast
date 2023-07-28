@@ -23,17 +23,11 @@ $__params = require __DIR__ .'/__params.php';
 /** TODO - SEO title and meta-tags */
 $this->params['breadcrumbs'][] = [
     'label' => $__params['items'],
-    'url' => ['catalog/index'],
+    'url' => ['search'],
 ];
 if (!empty($params['category'])) {
     foreach($params['category']->parents as $parent) {
         $this->params['breadcrumbs'][] = ['label' => $parent->name, 'url' => Url::to(['catalog/category', 'category' => $parent])];
-    }
-    if (isset($params['filter'])) {
-        $this->params['breadcrumbs'][] = ['label' => $params['category']->name, 'url' => Url::to(['catalog/category', 'category' => $params['category']])];
-        $this->params['breadcrumbs'][] = Yii::$app->productFeature->getFilterLabel($params['filter']);
-    } else {
-        $this->params['breadcrumbs'][] = $params['category']->name;
     }
 } else {
     $this->title = $__params['items'];
@@ -68,14 +62,6 @@ if (!empty($params['category'])) {
         <div class="catalog__cnt">
             <div class="row">
                 <div class="col-lg-9 col-md-8">
-                    <?php if (!empty($_GET['dev']) && !empty($params['category']) && $params['category']->video): ?>
-                        <div style="border: 5px solid #f4f4f4; padding: 1%;margin-bottom: 1em">
-                                <?= \lesha724\youtubewidget\Youtube::widget([
-                                    'video' => $params['category']->video,
-                                    'width' => '98%',
-                                ]) ?>
-                        </div>
-                    <?php endif; ?>
                     <?php if (empty($dataProvider) || !$dataProvider->count) :?>
                         <div class="empty-result">
                             <?= $__params['empty']?>
@@ -85,7 +71,7 @@ if (!empty($params['category'])) {
                             <?= $this->render('_items', [
                                 'dataProvider' => $dataProvider,
                                 '__params' => $__params,
-                                'featureIds' => $featureIds,
+//                                'featureIds' => $featureIds,
                             ])?>
                         </div>
                         <div class="clearfix">
@@ -96,20 +82,20 @@ if (!empty($params['category'])) {
                         </div>
                     <?php endif ?>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <?php if (!empty($params['category']) && !empty($params['category']->manuals)) :?>
-                        <?= $this->render('_manuals', [
-                            'category' => $params['category'],
-                            'to_catalog' => false,
-                            'to_hidden' => true,
-                        ])?>
-                    <?php endif; ?>
-                    <?= $this->render('_features', [
-                        'features' => $features,
-                        'values' => $params['features'],
-                        'to_hidden' => false,
-                    ])?>
-                </div>
+<!--                <div class="col-lg-3 col-md-4">-->
+<!--                    --><?php //if (!empty($params['category']) && !empty($params['category']->manuals)) :?>
+<!--                        --><?php //= $this->render('_manuals', [
+//                            'category' => $params['category'],
+//                            'to_catalog' => false,
+//                            'to_hidden' => true,
+//                        ])?>
+<!--                    --><?php //endif; ?>
+<!--                    --><?php //= $this->render('_features', [
+//                        'features' => $features,
+//                        'values' => $params['features'],
+//                        'to_hidden' => false,
+//                    ])?>
+<!--                </div>-->
             </div>
         </div>
     </div>

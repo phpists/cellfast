@@ -1,17 +1,16 @@
 <?php
 namespace cellfast\controllers;
 
-use backend\models\Product;
+use common\models\Product;
 use common\models\Document;
-use common\models\Event;
 use common\models\LocationRegion;
 use common\models\News;
 use common\models\Partner;
-use noIT\content\models\ContentSearch;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
 use yii\debug\models\timeline\DataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -109,8 +108,13 @@ class SiteController extends \common\controllers\SiteController
     public function actionSearch()
     {
         $searchRequest = Yii::$app->request->get('search_header');
-        $products = Product::find()->where(['LIKE', 'native_name', $searchRequest])->all();
-        return $this->render('test', compact('products'));
+        $products = Product::find()->where(['LIKE', 'native_name', $searchRequest]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $products,
+            'pagination' => [
+                'pageSize' => 12
+            ],
+        ]);
+        return $this->render('search/index-products', compact('dataProvider'));
     }
-
 }

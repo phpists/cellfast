@@ -9,6 +9,7 @@ return array_merge(
 		'register' => 'user/signup',
 		'login' => 'user/signin',
 		'docs' => 'docs/index',
+        'search' => 'site/search',
 		'password-forgot' => 'user/request-password-reset',
 
 		'feedback/send-form' => 'feedback/send-form',

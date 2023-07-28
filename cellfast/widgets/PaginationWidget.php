@@ -107,7 +107,11 @@ class PaginationWidget extends \common\widgets\LinkPager
 
 	public function createUrl( $page )
 	{
-		$url = Url::to($this->getRoute(['page' => $page]), $this->urlScheme );
+        $params = ['page' => $page];
+        if (isset($_GET['search_header'])) {
+            $params['search_header'] = $_GET['search_header'];
+        }
+		$url = Url::to($this->getRoute($params), $this->urlScheme );
 		if (!$this->urlEncode) {
 			$url = urldecode($url);
 		}
