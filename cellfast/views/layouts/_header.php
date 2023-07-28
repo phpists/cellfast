@@ -29,9 +29,9 @@ $cart = Yii::$container->get(\common\models\Cart::className());
         <div class="container">
             <div class="header__top__inn">
                 <div class="header__lang"><?= \common\widgets\LanguageSwitcher::widget()?></div>
-                <label><?= $jsonData ?></label>
 
                 <div class="header__auth">
+
                     <div class="search">
                         <form action="<?= Url::to(['site/search'])?>" method="get" class="form-inline">
                             <div class="input-group">
@@ -39,15 +39,10 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                                     <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
                                     <a><i class="fas fa-search"></i></a>
                                 </div>
-
                             </div>
                         </form>
                     </div>
-                    <?php echo $jsonData?>
-                    <script>
-                        var jsonData = <?php echo $jsonData; ?>;
-                       console.log(jsonData);
-                    </script>
+
                     <div class="header__link">
                         <a href="http://fb.me/cellfast.ukraine" target="_blank">
                             <div class="header__link__icon">

@@ -1,13 +1,11 @@
 <?php
 namespace cellfast\controllers;
 
-use backend\models\Product;
+use common\models\Product;
 use common\models\Document;
-use common\models\Event;
 use common\models\LocationRegion;
 use common\models\News;
 use common\models\Partner;
-use noIT\content\models\ContentSearch;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
@@ -111,17 +109,9 @@ class SiteController extends \common\controllers\SiteController
     {
         $searchRequest = Yii::$app->request->get('search_header');
         $search = str_replace(' ', '', $searchRequest);
-        $query = Product::find()->where(['LIKE', 'replace(native_name, " ", "")', $search]);
-        $this->setMeta('Пошук', 'product');
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => ['pageSize' => 3],
-        ]);
 
-        $jsonData = Json::encode($dataProvider);
-        Yii::info('jsonData: ' . print_r($jsonData, true));
+        $query = Product::find()->where(['LIKE', 'replace(native_name, " ", "")', $search])->all();
 
-        return $this->render('_header', ['jsonData' => $jsonData]);
+        return $this->render('searchresult', compact('query'));
     }
-
 }
