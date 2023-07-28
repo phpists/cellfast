@@ -109,8 +109,8 @@ class SiteController extends \common\controllers\SiteController
     public function actionSearch()
     {
         $searchRequest = Yii::$app->request->get('search_header');
-        $search = str_replace(' ', '', $searchRequest);
-        $query = Product::find()->where(['LIKE', 'replace(native_ )']);
+        $products = Product::find()->where(['LIKE', 'native_name', $searchRequest])->all();
+        return $this->render('test', compact('products'));
     }
 
 }

@@ -5,6 +5,7 @@ return array_merge(
 		'about' => 'site/about',
 		'contact' => 'site/contact',
 		'partners' => 'site/partners',
+        'search' => 'site/search',
 		'register' => 'user/signup',
 		'login' => 'user/signin',
 		'docs' => 'docs/index',

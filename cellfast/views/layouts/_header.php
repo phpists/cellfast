@@ -20,8 +20,40 @@ $cart = Yii::$container->get(\common\models\Cart::className());
         text-decoration: none;
     }
 
-    .input-group input {
-        padding-right: 30px;
+    .search_form {
+        margin-right: 10px;
+        align-items: center;
+    }
+
+    .search_wrapper {
+        position: relative;
+    }
+
+    .search_btn {
+        padding: 10px;
+    }
+
+    .search_wrapper input {
+        width: 250px;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+    #search_results {
+        background-color: white;
+        border-radius: 4px;
+        width: 100%;
+        border: 1px solid lightgrey;
+    }
+
+    #search_results > p {
+        border-bottom: 1px solid lightgrey;
+        font-size: 16px;
     }
 </style>
 <header class="header">
@@ -32,13 +64,11 @@ $cart = Yii::$container->get(\common\models\Cart::className());
 
                 <div class="header__auth">
                     <div class="search">
-                        <form action="<?= Url::to(['site/search'])?>" method="get" class="form-inline">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
-                                    <a><i class="fas fa-search"></i></a>
-                                </div>
+                        <form class="d-flex search_form" action="<?= Url::to(['/search'])?>" method="get">
+                            <div class="search_wrapper">
+                                <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
                             </div>
+                            <button class="btn d-block search_btn"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
 
