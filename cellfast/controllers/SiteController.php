@@ -1,6 +1,9 @@
 <?php
 namespace cellfast\controllers;
 
+use cellfast\models\Article;
+use common\models\Article as ArticleAlias;
+use common\models\Category;
 use common\models\Product;
 use common\models\Document;
 use common\models\LocationRegion;
@@ -109,12 +112,25 @@ class SiteController extends \common\controllers\SiteController
     {
         $searchRequest = Yii::$app->request->get('search_header');
         $products = Product::find()->where(['LIKE', 'native_name', $searchRequest]);
+        $name_field = 'name_ru_ru';
+        $content_field = 'body_ru_ru';
+        if (Yii::$app->language === 'uk-UA') {
+            $name_field = 'name_uk_ua';
+            $content_field = 'body_uk_ua';
+        }
+        $offset = Yii::$app->request->get('page')? Yii::$app->request->get('page') * ArticleAlias::PAGE_SIZE: 0;
+        $articles = Article::find()
+            ->where(['LIKE', $name_field, $searchRequest])
+            ->where(['LIKE', $content_field, $searchRequest])
+            ->offset($offset)
+            ->limit(ArticleAlias::PAGE_SIZE)
+            ->all();
         $dataProvider = new ActiveDataProvider([
             'query' => $products,
             'pagination' => [
-                'pageSize' => 12
+                'pageSize' => Category::PAGE_SIZE
             ],
         ]);
-        return $this->render('search/index-products', compact('dataProvider'));
+        return $this->render('search/index-products', compact('dataProvider', 'articles'));
     }
 }
