@@ -59,8 +59,8 @@ return [
                 'class' => \yii\web\UrlNormalizer::className(),
             ],
             'languages' => [
-                'ru' => 'ru-RU',
                 'ua' => 'uk-UA',
+                'ru' => 'ru-RU',
             ],
             'rules' => require(__DIR__ . '/routes.php'),
         ],
