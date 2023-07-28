@@ -47,7 +47,7 @@ if (!empty($params['category'])) {
         ]) ?>
         <?= \cellfast\widgets\Alert::widget() ?>
 
-        <h1 class="catalog__title"><?= ( !empty($params['category']) ? $params['category']->name : $this->title ); ?></h1>
+        <h1 class="catalog__title"><?= ( !empty($params['category']) ? $params['category']->name : $this->title ); ?> "<?= $_GET['search_header']; ?>"</h1>
 
         <div class="catalog__mbtn catalog__filter__open visible-sm visible-xs">
             <button class="btn btn_fw btn_blue"><?= Yii::t('app', 'Filter')?></button>
@@ -100,3 +100,8 @@ if (!empty($params['category'])) {
         </div>
     </div>
 </section>
+
+<?= $this->render('articles/index-articles', [
+    'articles' => $articles,
+    '__params' => $__params,
+])?>
