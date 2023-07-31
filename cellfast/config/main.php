@@ -10,7 +10,7 @@ return [
     'name' => 'Cell Fast Ukraine',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'ru-RU',
+    'language' => 'uk-UA',
     'controllerNamespace' => 'cellfast\controllers',
     'on beforeRequest' => function () {
 	    \noIT\seo\helpers\RedirectHelper::beforeRequest();
@@ -59,8 +59,8 @@ return [
                 'class' => \yii\web\UrlNormalizer::className(),
             ],
             'languages' => [
-                'ua' => 'uk-UA',
                 'ru' => 'ru-RU',
+                'ua' => 'uk-UA',
             ],
             'rules' => require(__DIR__ . '/routes.php'),
         ],
