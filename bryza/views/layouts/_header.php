@@ -44,7 +44,7 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                             <form action="<?= Url::to(['site/search'])?>" method="get" class="form-inline">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
+                                        <input type="text" class="form-control" placeholder="<?= Yii::t('app', 'Search')?>" name="search_header" id="search_header">
                                         <a><i class="fas fa-search"></i></a>
                                     </div>
                                 </div>

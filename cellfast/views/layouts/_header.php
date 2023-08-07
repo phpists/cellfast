@@ -67,7 +67,7 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                     <div class="search">
                         <form class="d-flex search_form" action="<?= Url::to(['/search'])?>" method="get">
                             <div class="search_wrapper">
-                                <input required type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
+                                <input required type="text" class="form-control" placeholder="<?= Yii::t('app', 'Search')?>" name="search_header" id="search_header">
                             </div>
                             <button class="btn d-block search_btn"><i class="fas fa-search"></i></button>
                         </form>
