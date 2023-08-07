@@ -10,7 +10,7 @@ return [
     'name' => 'BRYZA',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'ru-RU',
+    'language' => 'uk-UA',
     'controllerNamespace' => 'bryza\controllers',
     'on beforeRequest' => function () {
 	    \noIT\seo\helpers\RedirectHelper::beforeRequest();
