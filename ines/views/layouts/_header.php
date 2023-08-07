@@ -8,6 +8,54 @@ use yii\helpers\Url;
 $cart = Yii::$container->get(\common\models\Cart::className());
 
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* CSS стилі для вирівнювання іконки лупи всередені поля для ввода */
+    .input-group .input-group-prepend a {
+        position: relative;
+        left: -30px; /* Відстань, на яке переносим іконку вліво */
+        top: 2px; /* Вирівнюється вертикальне положення іконки */
+        z-index: 1;
+        color: #495057; /* Колір іконки */
+        text-decoration: none;
+    }
+
+    .search_form {
+        margin-right: 10px;
+        align-items: center;
+    }
+
+    .search_wrapper {
+        position: relative;
+    }
+
+    .search_btn {
+        padding: 10px;
+    }
+
+    .search_wrapper input {
+        width: 250px;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+    #search_results {
+        background-color: white;
+        border-radius: 4px;
+        width: 100%;
+        border: 1px solid lightgrey;
+    }
+
+    #search_results > p {
+        border-bottom: 1px solid lightgrey;
+        font-size: 16px;
+    }
+</style>
 <header class="header">
     <div class="header__top">
         <div class="container">
@@ -23,6 +71,14 @@ $cart = Yii::$container->get(\common\models\Cart::className());
 
 
                     <div class="header__auth">
+                        <div class="search">
+                            <form class="d-flex search_form" action="<?= Url::to(['/search'])?>" method="get">
+                                <div class="search_wrapper">
+                                    <input required type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
+                                </div>
+                                <button class="btn d-block search_btn"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
                         <div class="header__link">
                             <a href="https://www.facebook.com/Ines-Україна-101640025093802/" target="_blank">
                                 <div class="header__link__icon">
