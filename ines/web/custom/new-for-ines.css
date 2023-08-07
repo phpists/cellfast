@@ -1,0 +1,123 @@
+.mabout {
+    margin-top: 55px;
+}
+
+.mabout__wrap {
+    margin-top: 51px;
+    box-shadow: 0px 9px 25px 0px rgba(0, 0, 0, 0.1);
+}
+
+.mabout__row {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 340px;
+}
+
+.mabout__img {
+    width: 50%;
+}
+
+.maboutw.about-us-page .company-logo img {
+    height: auto;
+}
+
+.mabout__txt {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.mabout__txt__inn {
+    font-size: 15px;
+    line-height: 22px;
+    color: #111111;
+    font-weight: 300;
+    width: 100%;
+}
+
+.mabout__title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 42px;
+    color: #111111;
+}
+
+.maboutw.about-us-page {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    background: #f1f1f1;
+}
+
+.catalog-page {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    background: #f1f1f1;
+}
+
+.catalog-page .catalog__title {
+    text-align: center;
+}
+
+.catalog-product-index {
+    padding-top: 25px !important;
+    padding-bottom: 60px !important;
+}
+.catalog-product-index .breadcrumbs {
+    margin-bottom: 26px;
+}
+
+.catalog-product-index .pager {
+    margin-top: 50px;
+}
+
+.product__title h1 {
+    font-size: 30px !important;
+    line-height: 36px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+}
+
+@media (max-width: 1199px) {
+    .mabout__wrap {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .mabout {
+        margin-top: 40px;
+    }
+    .mabout__wrap {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 767px){
+    .mabout__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .mabout__row {
+        display: block;
+    }
+
+    .mabout__img {
+        width: 100%;
+    }
+
+    .mabout__txt {
+        padding: 15px;
+        width: 100%;
+    }
+}

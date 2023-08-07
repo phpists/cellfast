@@ -1,0 +1,55 @@
+.colors-tabs {
+    text-align: left;
+    padding-bottom: 31px;
+    vertical-align: middle;
+}
+.colors-tabs-title {
+    font-weight: 700;
+    margin-right: 1.0em;
+    font-size: 14px;
+}
+.colors-tabs .colors-tabs-item {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+}
+.colors-tabs .colors-tabs-item span._icon {
+    /*position: absolute;*/
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    padding: 5px 3px;
+    border-radius: 50%;
+    background: #ccc;
+    border: 1px solid rgba(0, 19, 84, 0.35);
+}
+.colors-tabs .colors-tabs-item span._icon svg {
+    opacity: 0;
+    color: #001354;
+    font-size: 12px;
+    padding: 0;
+    transition: opacity 0.5s ease;
+}
+.colors-tabs .colors-tabs-item.active span._icon {
+    border-color: rgba(0, 19, 84, 1);
+    box-shadow: 0 0 7px #001354;
+}
+.colors-tabs .colors-tabs-item.active span._icon svg {
+    opacity: 1;
+}
+.color-cnts {
+
+}
+.color-cnts-item {
+    display: none;
+}
+.color-cnts-item.active {
+    display: block;
+}
+.color-cnts-item table tbody tr td:first-child .img {
+    display: inline-block;
+    width: 100px;
+}
+.color-cnts-item table tbody tr td:first-child {
+    text-align: left;
+}

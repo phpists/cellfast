@@ -1,0 +1,225 @@
+.gdscalc-wrapper .lend-recom {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 20px
+}
+
+.gdscalc-wrapper .lend-recom p {
+    color: #191c20;
+    font-family: georgia;
+    font-size: 30px;
+    margin: 0
+}
+
+.gdscalc-wrapper #land-car-wr-ul {
+    width: 100%;
+    display: block;
+    margin: 30px 0 0;
+    padding: 0
+}
+
+.gdscalc-wrapper #land-car-wr-ul li {
+    list-style: none;
+    display: inline-block;
+    height: 30px;
+    color: #001354;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 30px;
+    margin-left: 10px;
+    cursor: default;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s
+}
+
+.gdscalc-wrapper #land-car-wr-ul li:before {
+    content: " ";
+    width: 18px;
+    height: 30px;
+    background: url(../images/lp/arrow_car.png) no-repeat;
+    float: left;
+    margin-right: 10px
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.gdscalc-wrapper #land-car-wr-ul li:first-child::before {
+    content: "";
+    background: no-repeat
+}
+
+.gdscalc-calculation {
+    position: relative
+}
+
+.gdscalc-td.colors > span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000
+}
+
+.gdscalc-filter {
+    padding: 1em 0
+}
+
+.gdscalc-filter:after {
+    display: block;
+    content: '';
+    clear: both
+}
+
+.gdscalc-container {
+    margin: 65px auto;
+    text-align: center;
+}
+
+.gdscalc-models {
+    margin: 25px -95px;
+    padding: 30px 0;
+    background: transparent;
+}
+
+.gdscalc-models > a {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 1px;
+    border: 1px solid #e7e7e7;
+    border-radius: 0
+}
+
+.gdscalc-models > a > span {
+    display: inline-block;
+    width: 135px;
+    height: 135px;
+    background: url(../images/housetypes-sprite.png) no-repeat
+}
+
+.gdscalc-models > a:hover {
+    text-decoration: none;
+    border: 2px solid #001354;
+    padding: 0;
+    border-radius: 5px
+}
+
+.gdscalc-models > a:hover > span {
+    border-radius: 3px
+}
+
+.gdscalc-models > a.DrainHouseA > span {
+    background-position: 0 0
+}
+
+.gdscalc-models > a.DrainHouseB > span {
+    background-position: -135px 0
+}
+
+.gdscalc-models > a.DrainHouseC > span {
+    background-position: -270px 0
+}
+
+.gdscalc-models > a.DrainHouseD > span {
+    background-position: -540px 0
+}
+
+.gdscalc-models > a.DrainHouseE > span {
+    background-position: -675px 0
+}
+
+.gdscalc-models > a.DrainHouseF > span {
+    background-position: -405px 0
+}
+
+.gdscalc-models > a.DrainHouseG > span {
+    background-position: -810px 0
+}
+
+.gdscalc-form .help-block {
+    display: none
+}
+
+.gdscalc-formpreview {
+    width: 330px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: 0 -25px
+}
+
+.gdscalc-formpreview-DrainHouseA {
+    background-image: url(../images/housetype/a.png)
+}
+
+.gdscalc-formpreview-DrainHouseB {
+    background-image: url(../images/housetype/b.png)
+}
+
+.gdscalc-formpreview-DrainHouseC {
+    background-image: url(../images/housetype/c.png)
+}
+
+.gdscalc-formpreview-DrainHouseD {
+    background-image: url(../images/housetype/d.png)
+}
+
+.gdscalc-formpreview-DrainHouseE {
+    background-image: url(../images/housetype/e.png)
+}
+
+.gdscalc-formpreview-DrainHouseF {
+    background-image: url(../images/housetype/f.png)
+}
+
+.gdscalc-formpreview-DrainHouseG {
+    background-image: url(../images/housetype/g.png)
+}
+
+#gdscalcDrain-table table.dataTable tbody tr[data-key='381'] {
+    border: 2px solid #001354;
+    font-weight: 700
+}
+
+#gdscalcDrain-table table.dataTable tbody tr[data-key='381'] td:first-child {
+    padding: 13px 10px 1px
+}
+
+#gdscalcDrain-table table.dataTable tbody tr[data-key='381'] .brand_name:before {
+    display: inline-block;
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: url(../images/cubok.png) no-repeat;
+    vertical-align: middle;
+    margin-right: 15px
+}
+
+#gdscalcDrain-table table.dataTable tbody th, #gdscalcDrain-table table.dataTable tbody td {
+    padding: 22px 10px 8px
+}
+
+#gdscalcDrain-table .btn-add-to-cart {
+    width: auto
+}
+
+#gdscalcDrain-table .price {
+    font-size: 20px;
+    color: #001354;
+    font-weight: 700
+}
+
+.gdscalc-components {
+    position: absolute;
+    right: 0;
+    top: -2em;
+    color: #337ab7;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: default
+}

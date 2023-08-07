@@ -1,0 +1,36 @@
+.maboutw.about-us-page {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    background: #f1f1f1;
+}
+
+.catalog-page {
+    padding-top: 25px;
+    padding-bottom: 70px;
+    background: #f1f1f1;
+}
+
+.catalog-page .catalog__title {
+    text-align: center;
+}
+
+.catalog-product-index {
+    padding-top: 25px !important;
+    padding-bottom: 60px !important;
+}
+.catalog-product-index .breadcrumbs {
+    margin-bottom: 26px;
+}
+
+.catalog-product-index .pager {
+    margin-top: 50px;
+}
+
+.product__title h1 {
+    font-size: 30px !important;
+    line-height: 36px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+}
+
