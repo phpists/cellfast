@@ -32,7 +32,8 @@ class PaginationWidget extends \common\widgets\LinkPager
 	public $_items = [];
 	public $_arrows = [];
 
-	protected function renderPageButtons() {
+	protected function renderPageButtons()
+	{
 		$pageCount = $this->pagination->getPageCount();
 		if ( $pageCount < 2 && $this->hideOnSinglePage ) {
 			return '';
@@ -48,9 +49,9 @@ class PaginationWidget extends \common\widgets\LinkPager
 		] );
 	}
 
-	public function createButtons() {
+	public function createButtons()
+	{
 		$currentPage = $this->pagination->getPage() + 1;
-
 
 		//  internal pages
 		for ( $page = 1; $page <= $this->pagination->getPageCount(); $page ++ ) {
@@ -58,6 +59,7 @@ class PaginationWidget extends \common\widgets\LinkPager
 			if ( $currentPage == $page ) {
 				$class .= ' active';
 			}
+
 			if ( $currentPage == $page ) { /* $class .= ' disabled'; */
 			}
 
@@ -72,7 +74,8 @@ class PaginationWidget extends \common\widgets\LinkPager
 		}
 	}
 
-	public function createItem( $params = [] ) {
+	public function createItem( $params = [] )
+	{
 		$default_params = [
 			'page'     => '',
 			'class'    => $this->itemClassName,
@@ -94,22 +97,29 @@ class PaginationWidget extends \common\widgets\LinkPager
 		return $default_params;
 	}
 
-	public function getRoute($changes = []) {
+	public function getRoute($changes = [])
+	{
 		if ( null === $this->route ) {
 			$this->route = Yii::$app->urlManager->getCurrentRoute();
 		}
 		return array_merge($changes, $this->route);
 	}
 
-	public function createUrl( $page ) {
-		$url = Url::to($this->getRoute(['page' => $page]), $this->urlScheme );
+	public function createUrl( $page )
+	{
+        $params = ['page' => $page];
+        if (isset($_GET['search_header'])) {
+            $params['search_header'] = $_GET['search_header'];
+        }
+		$url = Url::to($this->getRoute($params), $this->urlScheme );
 		if (!$this->urlEncode) {
 			$url = urldecode($url);
 		}
 		return $url;
 	}
 
-	public function listTransformation() {
+	public function listTransformation()
+	{
 
 		if ( $this->showAll === true ) {
 			return;
@@ -119,7 +129,7 @@ class PaginationWidget extends \common\widgets\LinkPager
 			$return = [];
 
 			if ( $this->showFirstElement > 0 ) {
-				$count        = 0;
+				$count = 0;
 				$return_first = [];
 
 				if( $currentPage == 1 ){
@@ -165,7 +175,7 @@ class PaginationWidget extends \common\widgets\LinkPager
 
 
 			if ( $this->showLastElement > 0 ) {
-				$count       = 0;
+				$count = 0;
 				$return_last = [];
 
 				if( $currentPage == count($this->_items) ){
@@ -205,7 +215,8 @@ class PaginationWidget extends \common\widgets\LinkPager
 		}
 	}
 
-	public function addSeparator( $list, $key ) {
+	public function addSeparator( $list, $key )
+	{
 		$list[ $key ] = $this->createItem( [
 //			'label'    => '&hellip;',
 			'label'    => '<span></span><span></span><span></span>',
@@ -218,7 +229,8 @@ class PaginationWidget extends \common\widgets\LinkPager
 		return $list;
 	}
 
-	public function addTravel() {
+	public function addTravel()
+	{
 		if ( $this->showTravel == true ) {
 			$currentPage = $this->pagination->getPage() + 1;
 
@@ -241,7 +253,6 @@ class PaginationWidget extends \common\widgets\LinkPager
 					'href'  => $this->createUrl( $currentPage - 1 ),
 				] );
 			}
-
 
 			// next page
 			if ( ( $currentPage + 1 <= $this->pagination->getPageCount() ) == true ) {

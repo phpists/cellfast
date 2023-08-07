@@ -20,8 +20,40 @@ $cart = Yii::$container->get(\common\models\Cart::className());
         text-decoration: none;
     }
 
-    .input-group input {
-        padding-right: 30px;
+    .search_form {
+        margin-right: 10px;
+        align-items: center;
+    }
+
+    .search_wrapper {
+        position: relative;
+    }
+
+    .search_btn {
+        padding: 10px;
+    }
+
+    .search_wrapper input {
+        width: 250px;
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+    #search_results {
+        background-color: white;
+        border-radius: 4px;
+        width: 100%;
+        border: 1px solid lightgrey;
+    }
+
+    #search_results > p {
+        border-bottom: 1px solid lightgrey;
+        font-size: 16px;
     }
 </style>
 <header class="header">
