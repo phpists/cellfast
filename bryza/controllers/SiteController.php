@@ -112,7 +112,9 @@ class SiteController extends \common\controllers\SiteController
     public function actionSearch()
     {
         $searchRequest = Yii::$app->request->get('search_header');
-        $products = \common\models\Product::find()->where(['LIKE', 'native_name', $searchRequest]);
+        $products = \common\models\Product::find()
+            ->where(['LIKE', 'native_name', $searchRequest])
+            ->orWhere(['LIKE', 'native_name', $searchRequest]);
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
         if (Yii::$app->language === 'uk-UA') {
@@ -122,7 +124,7 @@ class SiteController extends \common\controllers\SiteController
         $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
             ->where(['LIKE', $name_field, $searchRequest])
-            ->where(['LIKE', $content_field, $searchRequest])
+            ->orWhere(['LIKE', $content_field, $searchRequest])
             ->offset($offset)
             ->limit(ArticleAlias::PAGE_SIZE)
             ->all();

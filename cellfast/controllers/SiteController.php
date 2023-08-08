@@ -121,7 +121,7 @@ class SiteController extends \common\controllers\SiteController
         $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
             ->where(['LIKE', $name_field, $searchRequest])
-            ->where(['LIKE', $content_field, $searchRequest])
+            ->orWhere(['LIKE', $content_field, $searchRequest])
             ->offset($offset)
             ->limit(ArticleAlias::PAGE_SIZE)
             ->all();
