@@ -118,7 +118,7 @@ class SiteController extends \common\controllers\SiteController
             $name_field = 'name_uk_ua';
             $content_field = 'body_uk_ua';
         }
-        $offset = Yii::$app->request->get('page')? Yii::$app->request->get('page') * ArticleAlias::PAGE_SIZE: 0;
+        $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
             ->where(['LIKE', $name_field, $searchRequest])
             ->where(['LIKE', $content_field, $searchRequest])

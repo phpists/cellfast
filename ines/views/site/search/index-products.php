@@ -100,8 +100,10 @@ if (!empty($params['category'])) {
         </div>
     </div>
 </section>
+<?php if (sizeof($articles) > 0) : ?>
 
 <?= $this->render('articles/index-articles', [
     'articles' => $articles,
     '__params' => $__params,
 ])?>
+<?php endif; ?>

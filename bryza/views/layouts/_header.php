@@ -61,8 +61,6 @@ $cart = Yii::$container->get(\common\models\Cart::className());
         <div class="container">
             <div class="header__top__inn">
                 <div class="header__lang"><?= \common\widgets\LanguageSwitcher::widget() ?></div>
-                <label><?= $jsonData ?></label>
-
                 <div class="header__calculator_link">
                     <a href="/catalog/gds-calc">
                         <span class="icon"><svg class="svg-icon calc-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/template/svg-sprite.svg#calc-icon"></use></svg></span>
@@ -73,20 +71,13 @@ $cart = Yii::$container->get(\common\models\Cart::className());
 
                     <div class="header__auth">
                         <div class="search">
-                            <form action="<?= Url::to(['site/search'])?>" method="get" class="form-inline">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <input type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
-                                        <a><i class="fas fa-search"></i></a>
-                                    </div>
+                            <form class="d-flex search_form" action="<?= Url::to(['/search'])?>" method="get">
+                                <div class="search_wrapper">
+                                    <input required type="text" class="form-control" placeholder="Пошук" name="search_header" id="search_header">
                                 </div>
+                                <button class="btn d-block search_btn"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
-                        <?php echo $jsonData?>
-                        <script>
-                            var jsonData = <?php echo $jsonData; ?>;
-                            console.log(jsonData);
-                        </script>
                         <div class="header__link">
                             <a href="https://www.facebook.com/Bryza-Україна-107857921130721/" target="_blank">
                                 <div class="header__link__icon">

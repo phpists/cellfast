@@ -82,26 +82,28 @@ if (!empty($params['category'])) {
                         </div>
                     <?php endif ?>
                 </div>
-<!--                <div class="col-lg-3 col-md-4">-->
-<!--                    --><?php //if (!empty($params['category']) && !empty($params['category']->manuals)) :?>
-<!--                        --><?php //= $this->render('_manuals', [
-//                            'category' => $params['category'],
-//                            'to_catalog' => false,
-//                            'to_hidden' => true,
-//                        ])?>
-<!--                    --><?php //endif; ?>
-<!--                    --><?php //= $this->render('_features', [
-//                        'features' => $features,
-//                        'values' => $params['features'],
-//                        'to_hidden' => false,
-//                    ])?>
-<!--                </div>-->
+                <!--                <div class="col-lg-3 col-md-4">-->
+                <!--                    --><?php //if (!empty($params['category']) && !empty($params['category']->manuals)) :?>
+                <!--                        --><?php //= $this->render('_manuals', [
+                //                            'category' => $params['category'],
+                //                            'to_catalog' => false,
+                //                            'to_hidden' => true,
+                //                        ])?>
+                <!--                    --><?php //endif; ?>
+                <!--                    --><?php //= $this->render('_features', [
+                //                        'features' => $features,
+                //                        'values' => $params['features'],
+                //                        'to_hidden' => false,
+                //                    ])?>
+                <!--                </div>-->
             </div>
         </div>
     </div>
 </section>
+<?php if (sizeof($articles) > 0) : ?>
 
-<?= $this->render('articles/index-articles', [
-    'articles' => $articles,
-    '__params' => $__params,
-])?>
+    <?= $this->render('articles/index-articles', [
+        'articles' => $articles,
+        '__params' => $__params,
+    ])?>
+<?php endif; ?>
