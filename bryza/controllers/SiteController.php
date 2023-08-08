@@ -113,8 +113,11 @@ class SiteController extends \common\controllers\SiteController
     {
         $searchRequest = Yii::$app->request->get('search_header');
         $products = \common\models\Product::find()
-            ->where(['LIKE', 'native_name', $searchRequest])
-            ->orWhere(['LIKE', 'native_name', $searchRequest]);
+            ->select('product.*')
+            ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
+            ->where(['LIKE', 'product.native_name', $searchRequest])
+            ->orWhere(['LIKE', 'product_item.sku', $searchRequest])
+            ->distinct();
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
         if (Yii::$app->language === 'uk-UA') {

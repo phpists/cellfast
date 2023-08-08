@@ -111,7 +111,12 @@ class SiteController extends \common\controllers\SiteController
     public function actionSearch()
     {
         $searchRequest = Yii::$app->request->get('search_header');
-        $products = Product::find()->where(['LIKE', 'native_name', $searchRequest]);
+        $products = Product::find()
+            ->select('product.*')
+            ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
+            ->where(['LIKE', 'product.native_name', $searchRequest])
+            ->orWhere(['LIKE', 'product_item.sku', $searchRequest])
+            ->distinct();
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
         if (Yii::$app->language === 'uk-UA') {

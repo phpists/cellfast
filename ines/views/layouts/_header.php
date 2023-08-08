@@ -55,6 +55,44 @@ $cart = Yii::$container->get(\common\models\Cart::className());
         border-bottom: 1px solid lightgrey;
         font-size: 16px;
     }
+    @media screen and (max-width: 1200px){
+        .header__top__inn {
+            flex-wrap: wrap;
+            min-height: 40px;
+            height: auto;
+            padding: 15px 0;
+            gap: 20px;
+        }
+
+        .header__auth {
+            width: 100%;
+        }
+
+        .header__auth > .search {
+            flex: 1;
+        }
+    }
+    @media screen and (max-width: 685px){
+        .header__auth {
+            width: 100%;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            justify-content: center;
+        }
+
+        .header__auth > .search {
+            width: 100%;
+            flex: none;
+        }
+
+        .search_wrapper > input {
+            width: 100%;
+        }
+
+        .search_wrapper {
+            width: 100%;
+        }
+    }
 </style>
 <header class="header">
     <div class="header__top">
