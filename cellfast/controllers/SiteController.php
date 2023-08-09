@@ -111,17 +111,17 @@ class SiteController extends \common\controllers\SiteController
     public function actionSearch()
     {
         $searchRequest = Yii::$app->request->get('search_header');
-        $products = \common\models\Product::find()
-            ->select('product.*')
-            ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
-            ->where(['AND', ['OR', ['LIKE', 'product.native_name', $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]], 'product.project_id="cellfast"'])
-            ->distinct();
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
         if (Yii::$app->language === 'uk-UA') {
             $name_field = 'name_uk_ua';
             $content_field = 'body_uk_ua';
         }
+        $products = \common\models\Product::find()
+            ->select('product.*')
+            ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
+            ->where(['AND', ['OR', ['LIKE', 'product.'.$name_field, $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]], 'product.project_id="cellfast"'])
+            ->distinct();
         $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
             ->where(['AND', ['OR', ['LIKE', $name_field, $searchRequest], ['LIKE', $content_field, $searchRequest]], 'article.project_id="cellfast"'])
