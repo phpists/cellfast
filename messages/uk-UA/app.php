@@ -5,6 +5,8 @@ return [
     'uk-UA' => 'українською',
     'Homepage' => 'Головна',
     'Created by <a href="{link}" target="_blank" rel="nofollow">&quot;{name}&quot;</a>' => 'Зроблено в <a href="{link}" target="_blank" rel="nofollow">&quot;{name}&quot;</a>',
+    'Sing in' => 'Вхід',
+    'Sing up' => 'Реєстрація',
     'Native Name' => 'Административное название',
     'Name' => 'Найменування',
     'name ' => 'найменування',
