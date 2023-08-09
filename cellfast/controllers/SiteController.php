@@ -114,7 +114,7 @@ class SiteController extends \common\controllers\SiteController
         $products = \common\models\Product::find()
             ->select('product.*')
             ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
-            ->where(['AND', ['OR', ['LIKE', 'product.native_name', $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]], 'product_item.project_id="bryza"'])
+            ->where(['AND', ['OR', ['LIKE', 'product.native_name', $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]], 'product_item.project_id="cellfast"'])
             ->distinct();
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
@@ -124,7 +124,7 @@ class SiteController extends \common\controllers\SiteController
         }
         $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
-            ->where(['AND', ['OR', ['LIKE', $name_field, $searchRequest], ['LIKE', $content_field, $searchRequest]], 'product_item.project_id="bryza"'])
+            ->where(['AND', ['OR', ['LIKE', $name_field, $searchRequest], ['LIKE', $content_field, $searchRequest]], 'product_item.project_id="cellfast"'])
             ->offset($offset)
             ->limit(ArticleAlias::PAGE_SIZE)
             ->all();
