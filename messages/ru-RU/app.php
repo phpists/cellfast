@@ -6,6 +6,8 @@ return [
     'Homepage' => 'Главная',
     'Created by <a href="{link}" target="_blank" rel="nofollow">&quot;{name}&quot;</a>' => 'Сделано в <a href="{link}" target="_blank" rel="nofollow">&quot;{name}&quot;</a>',
     'Native Name' => 'Административное название',
+    'Sing in' => 'Вход',
+    'Sing up' => 'Регистрация',
     'Name' => 'Наименование',
     'name ' => 'наименование',
     'Description' => 'Описание',
