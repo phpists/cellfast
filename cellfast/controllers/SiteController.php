@@ -113,14 +113,18 @@ class SiteController extends \common\controllers\SiteController
         $searchRequest = Yii::$app->request->get('search_header');
         $name_field = 'name_ru_ru';
         $content_field = 'body_ru_ru';
+        $second_name_field = 'name_uk_ua';
         if (Yii::$app->language === 'uk-UA') {
+            $second_name_field = $name_field;
             $name_field = 'name_uk_ua';
             $content_field = 'body_uk_ua';
         }
         $products = \common\models\Product::find()
             ->select('product.*')
             ->join('INNER JOIN', 'product_item', 'product_item.product_id = product.id')
-            ->where(['AND', ['OR', ['LIKE', 'product.'.$name_field, $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]], 'product.project_id="cellfast"'])
+            ->where(['AND',
+                ['OR', ['LIKE', 'product.'.$name_field, $searchRequest], ['LIKE', 'product.'.$second_name_field, $searchRequest], ['LIKE', 'product_item.sku', $searchRequest]],
+                'product.project_id="cellfast"'])
             ->distinct();
         $offset = Yii::$app->request->get('page')? (Yii::$app->request->get('page') - 1) * ArticleAlias::PAGE_SIZE: 0;
         $articles = Article::find()
