@@ -285,7 +285,7 @@ function getStyleCode($name)
 
 /**
  * Formats message using styles if STDOUT supports it.
- * @param string $message message
+ * @param string $messagкe message
  * @param string[] $styles styles
  * @return string formatted message.
  */

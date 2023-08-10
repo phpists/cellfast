@@ -4691,7 +4691,7 @@ footer.footer {
 }
 @media (max-width: 767px) {
     .mtop__slider-wrap {
-        height: 440px;
+        height: 250px;
     }
 }
 .mtop__slider {
