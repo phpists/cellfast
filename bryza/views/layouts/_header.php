@@ -133,7 +133,7 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/template/svg-sprite.svg#enter-icon"></use>
                                     </svg>
                                 </div>
-                                <div class="header__reg__txt"><span>Вход</span></div>
+                                <div class="header__reg__txt"><span><?= Yii::t('app', 'Sing in'); ?></span></div>
                             </a>
                         </div>
                         <div class="header__reg">
@@ -143,7 +143,7 @@ $cart = Yii::$container->get(\common\models\Cart::className());
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/template/svg-sprite.svg#user-icon"></use>
                                     </svg>
                                 </div>
-                                <div class="header__reg__txt"><span>Регистрация</span></div>
+                                <div class="header__reg__txt"><span><?= Yii::t('app', 'Sing up'); ?></span></div>
                             </a>
                         </div>
                     </div>

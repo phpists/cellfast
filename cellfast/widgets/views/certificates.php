@@ -12,7 +12,7 @@ use yii\helpers\Html;
     <a name="certificates" id="certificates"></a>
     <div class="container">
         <div class="mserts">
-            <div class="mserts__title"><span>Сертификаты</span></div>
+            <div class="mserts__title"><span><?= Yii::t('app', 'Certificates'); ?></span></div>
             <div class="mserts__cnt">
                 <div class="mserts__slider-wrap">
 
