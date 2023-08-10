@@ -18,16 +18,24 @@
 @media (max-width: 767px) {
   .mcatalog {
     padding-bottom: 40px;
-    padding-top: 0px;
+    padding-top: 40px;
   }
 }
 
-@media (max-width: 378px) {
+@media (max-width: 400px) {
   .mtop__slide__inn {
     height: 180px;
   }
-  .mtop__slider-wrap {
+  div.mtop__slider-wrap {
     height: 190px;
+  }
+}
+@media (max-width: 300px) {
+  .mtop__slide__inn {
+    height: 140px;
+  }
+  div.mtop__slider-wrap {
+    height: 150px;
   }
 }
 .mcatalog__title {
