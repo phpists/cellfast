@@ -21,6 +21,15 @@
     padding-top: 0px;
   }
 }
+
+@media (max-width: 378px) {
+  .mtop__slide__inn {
+    height: 180px;
+  }
+  .mtop__slider-wrap {
+    height: 190px;
+  }
+}
 .mcatalog__title {
   text-align: center;
   font-size: 36px;
