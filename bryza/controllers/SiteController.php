@@ -107,7 +107,7 @@ class SiteController extends \common\controllers\SiteController
 			                               'project_id' => Yii::$app->projects->current->alias,
 		                               ]);
 
-		return $this->render("downlaoad/{$type}", ['dataProvider' => $dataProvider]);
+		return $this->render("download/{$type}", ['dataProvider' => $dataProvider]);
 	}
     public function actionSearch()
     {
