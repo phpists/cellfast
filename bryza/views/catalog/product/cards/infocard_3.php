@@ -27,5 +27,8 @@ use yii\helpers\Html;
 				<?=$this->render('parts/buy', ['itemModel' => $itemModel,]); ?>
 			</div>
 		</div>
+        <div class="product__top__right__btxt">
+            <span><?= $model->teaser ?></span>
+        </div>
 	</div>
 </div>
