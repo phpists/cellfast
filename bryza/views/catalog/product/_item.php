@@ -23,7 +23,7 @@ $productURL = Url::to(["catalog/product", 'product' => $model]) . '?item='. $pro
 		<?php if ( $productItem->image ) :?>
             <div class="catalog__it__img">
                 <a href="<?= $productURL ?>" class="catalog__it__img__link <?= $__params['id']?>-cover">
-                    <?= \noIT\imagecache\helpers\ImagecacheHelper::getImage($productItem->imageUrl, 'product_list_cover', ['class' => 'product_image'])?>
+                    <img src="<?= $productItem->imageUrl ?>">
                 </a>
 	            <?php if ($model->definedFeatures) :?>
                     <div class="catalog__it__img__tags features">
