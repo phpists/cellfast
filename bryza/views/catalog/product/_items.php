@@ -13,7 +13,17 @@
 <?php foreach (array_values($dataProvider->models) as $i => $row) :?>
     <?php
         $entity = \common\models\ProductEntity::findOne($row);
-        $entity->item = isset($row['items']) && is_array($row['items']) && count($row['items']) == 1 ? \common\models\ProductItem::findOne($row['items'][0]) : \common\models\ProductItem::findOne($row['items'][0]);
+
+        if (isset($row['items']) && is_array($row['items']) && count($row['items']) == 1){
+            $entity->item = \common\models\ProductItem::findOne($row['items'][0]);
+        } else{
+            if (isset($row['items'][0])){
+
+                $entity->item = \common\models\ProductItem::findOne($row['items'][0]);
+            } else {
+                $entity->item =   $entity->getItem($featureIds);
+            }
+        }
     ?>
     <?= $this->render('_item', [
         'model' => $entity,
