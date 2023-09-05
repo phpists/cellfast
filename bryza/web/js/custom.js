@@ -48,7 +48,9 @@ $('.mtop__slider-wrap').each(function(index, el) {
         speed: 500,
         infinite: true,
         dots: true,
-        appendDots: dotsWrap
+        appendDots: dotsWrap,
+        autoplay: true,
+        autoplaySpeed: 5000,
     })
 });
 
