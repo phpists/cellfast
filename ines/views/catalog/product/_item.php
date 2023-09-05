@@ -21,21 +21,13 @@ $coverImageUrl = $productItem->imageUrl ? : $model->image;
 <div class="catalog__list__col <?= $__params['id']?>-item">
 	<div class="catalog__it" data-features='<?=json_encode($model->definedFeaturesMap)?>'>
 		<?php /** Print entity cover-image */ ?>
-
-		<?php if ( $coverImageUrl ) :?>
+        <?php if ( $productItem->image ) :?>
             <div class="catalog__it__img">
                 <a href="<?= $productURL ?>" class="catalog__it__img__link <?= $__params['id']?>-cover">
-                    <?= \noIT\imagecache\helpers\ImagecacheHelper::getImage($coverImageUrl, 'product_list_cover', ['class' => 'product_image'])?>
+                    <img src="<?= $productItem->imageUrl ?>">
                 </a>
-	            <?php if ($model->definedFeatures) :?>
-                    <div class="catalog__it__img__tags features">
-			            <?php foreach ( $model->definedFeatures as $key=>$feature ) : ?>
-				            <?php //= Html::dropDownList( /* $feature['entity']->slug */ 'filter[]', null, \yii\helpers\ArrayHelper::map($feature['values'], 'id', 'value'), ['title' => $feature['entity']->name])?>
-			            <?php endforeach?>
-                    </div>
-	            <?php endif?>
             </div>
-		<?php endif?>
+        <?php endif?>
 
 		<?php /** Print entity title */ ?>
 		<div class="catalog__it__name <?= $__params['id']?>-title">

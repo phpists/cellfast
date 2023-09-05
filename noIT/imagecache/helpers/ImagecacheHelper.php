@@ -102,6 +102,7 @@ class ImagecacheHelper extends BaseObject
         if (!file_exists($presetPath)) {
             @mkdir($presetPath, 0777, true);
         }
+
         return false;
     }
 

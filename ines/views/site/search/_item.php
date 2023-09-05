@@ -30,20 +30,9 @@ $sku = $productItem ? $productItem->sku : '-';
     <div class="catalog__it" data-features='<?= json_encode($model->definedFeaturesMap) ?>'>
 
         <div class="catalog__it__img">
-            <a href="<?= $productURL ?>" class="catalog__it__img__link <?= $__params['id'] ?>-cover">
-				<?php if($model->image) : ?>
-					<?= ImagecacheHelper::getImage($model->image, 'product_list_cover', ['class' => 'product_image']) ?>
-				<?php else : ?>
-					<?= Html::img('/img/image-placeholder.jpg', ['class' => 'product_image']) ?>
-				<?php endif ?>
-            </a>
-<!--			--><?php //if ($model->definedFeatures) : ?>
-<!--                <div class="catalog__it__img__tags features">-->
-<!--					--><?php //foreach ( $model->definedFeatures as $key=>$feature ) : ?>
-<!--						--><?php //= Html::dropDownList('filter['. $model->id .']['. $feature['entity']->slug .']', $featureIds, ArrayHelper::map($feature['values'], 'id', 'value_label'), ['title' => $feature['entity']->name]) ?>
-<!--					--><?php //endforeach ?>
-<!--                </div>-->
-<!--			--><?php //endif ?>
+                <a href="<?= $productURL ?>" class="catalog__it__img__link <?= $__params['id']?>-cover">
+                    <img src="<?= $productItem->imageUrl ?>">
+                </a>
         </div>
 
 		<?php /** Print entity title */ ?>

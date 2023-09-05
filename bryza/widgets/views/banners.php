@@ -9,7 +9,7 @@
 				<?php foreach ($banners as $banner) : ?>
                     <div class="mtop__slide">
                         <div class="mtop__slide__img objectfit">
-                            <img src="<?= $banner->getUrl('thumb') ?>">
+                            <img src="<?= $banner->getUrl('original') ?>">
                         </div>
                         <div class="container">
                             <div class="mtop__slide__inn">

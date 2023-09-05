@@ -68,7 +68,7 @@ $itemModel = $model->getItemById($item);
                             <?php if ( $itemModel && ( $mainImage = $itemModel->imageUrl ) ) : ?>
                                 <div class="product__slider__big__slide">
                                     <a id="product_image__wrapper" href="<?= ImagecacheHelper::getImageSrc( $mainImage, 'fullsize' ) ?>">
-                                        <?= ImagecacheHelper::getImage( $mainImage, 'fullsize' ) ?>
+                                        <img src="<?= $itemModel->imageUrl ?>">
                                     </a>
                                 </div>
                             <?php endif ?>
