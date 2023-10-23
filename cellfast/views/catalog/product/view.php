@@ -61,6 +61,7 @@ $featuresTable = FeatureTableWidget::widget( ['model' => $model] );
         <div class="product__title">
             <h1><?= $model->name ?></h1>
         </div>
+<!--        --><?php //var_dump($model->items[50]->packages); ?>
 
         <div class="product__top <?= $__params['id'] ?>-view-wrapper">
             <div class="product__top__left">

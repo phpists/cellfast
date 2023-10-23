@@ -37,11 +37,11 @@
                 <?php endif ?>
 
 				<?php // todo Hide prices ?>
-				<?php // =$this->render('parts/price', ['model' => $model]); ?>
+				<?= $this->render('parts/price', ['model' => $model]); ?>
 
 				<?php // =$this->render('parts/calculator', ['model' => $model]); ?>
 
-				<?php //=$this->render('parts/buy', ['model' => $model]); ?>
+<!--				--><?php //$this->render('parts/buy', ['model' => $model]); ?>
             </div>
         </div>
     </div>
